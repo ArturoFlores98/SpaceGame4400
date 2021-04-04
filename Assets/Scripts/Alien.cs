@@ -6,6 +6,7 @@ public class Alien : MonoBehaviour
 {
     public int scoreValue;
     //public GameObject explosion;
+    //Hello Terrance
     
     public void Kill()
     {
