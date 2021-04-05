@@ -123,3 +123,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 200
+  explosion: {fileID: 8593296552003099156, guid: 8e513da645c7abe46909e9c173709741, type: 3}

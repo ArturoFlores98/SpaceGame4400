@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7585489448565020851}
   m_Layer: 0
   m_Name: SIB
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caee5af86b56f5f4abea5845acd3c312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secs: 1
+  secs: 2
 --- !u!50 &-7585489448565020851
 Rigidbody2D:
   serializedVersion: 4

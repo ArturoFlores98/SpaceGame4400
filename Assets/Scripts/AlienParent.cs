@@ -8,10 +8,10 @@ public class AlienParent : MonoBehaviour
     public GameObject mothershipPrefab;
     private Vector3 updownMove = new Vector3(.1f,0,0);
     private Vector3 leftrightMove = new Vector3(0,.1f,0);
-    private Vector3 motherShipSpawnPos = new Vector3(9.84f, 5.5f, 0);
+    private Vector3 motherShipSpawnPos = new Vector3(9.84f, 6.5f, 0);
 
-    private const float left = -5.2f;
-    private const float right = 5.2f;
+    private const float left = -6f;
+    private const float right = 6f;
     private const float maxmovespeed = 0.02f;
     private float enemyMove = 0.01f;
     private const float enemyMoveSpeed = 0.005f;

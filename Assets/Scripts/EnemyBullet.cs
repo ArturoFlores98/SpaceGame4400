@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    private float speed = 10;
+    private float speed = 5;
     void Update()
     {
        transform.Translate(Vector2.down * Time.deltaTime * speed); 
