@@ -18,6 +18,9 @@ public class Ship : MonoBehaviour
         shipStats.currentLives = shipStats.maxLives;
 
         transform.position = startScreenPosition;
+
+        //UIController.UpdateHealthbar(shipStats.currentHealth);
+        UIController.UpdateLives(shipStats.currentLives);
     }
     void Update()
     {
@@ -35,10 +38,12 @@ public class Ship : MonoBehaviour
     private void TakeDamage()
     {
         shipStats.currentHealth--;
+        //UIController.UpdateHealthbar(shipStats.currentHealth);
 
         if (shipStats.currentHealth <= 0)
         {
             shipStats.currentLives--;
+            UIController.UpdateLives(shipStats.currentLives);
 
             if (shipStats.currentLives <= 0)
             {
