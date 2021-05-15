@@ -12,6 +12,7 @@ public class AlienParent : MonoBehaviour
 
     private const float left = -6f;
     private const float right = 6f;
+    private const float start_y = 2f;
     private const float maxmovespeed = 0.02f;
     private float enemyMove = 0.01f;
     private const float enemyMoveSpeed = 0.005f;
@@ -23,6 +24,7 @@ public class AlienParent : MonoBehaviour
     private const float motherShipMin = 15f;
     private const float motherShipMax = 60f;
     private bool toRight;
+    private bool entering = true;
     public static List<GameObject> allAliens = new List<GameObject>();
         void Start()
     {
@@ -32,7 +34,16 @@ public class AlienParent : MonoBehaviour
     
     void Update()
     {
-        if(enemyMove <= 0)
+        if(entering)
+        {
+            transform.Translate(Vector2.down * Time.deltaTime * 10);
+
+            if(transform.position.y <= start_y)
+                entering = false;
+        }
+        else
+        {
+             if(enemyMove <= 0)
             EnemiesMove();
 
         if(shootTimer <= 0)
@@ -44,6 +55,7 @@ public class AlienParent : MonoBehaviour
         enemyMove -= Time.deltaTime;
         shootTimer -= Time.deltaTime;
         mothershipTimer -= Time.deltaTime;
+        }
 
     }
 

@@ -59,9 +59,19 @@ public class UIController : MonoBehaviour
         instance.scoreText.text = instance.score.ToString("000,000");
     }
 
-    public static void UpdateHighScore()
+    public static void UpdateHighScore(int hs)
     {
-        //Todo
+        if(instance.highscore < hs)
+        {
+            instance.highscore = hs;
+            instance.highscoreText.text = instance.highscore.ToString("000,000");
+        }
+        
+    }
+
+    public static int GetHighScore()
+    {
+        return instance.highscore;
     }
 
     public static void UpdateWave()
@@ -72,6 +82,6 @@ public class UIController : MonoBehaviour
 
     public static void UpdateCoins()
     {
-        //Tod
+        instance.coinsText.text = Inventory.currentCoins.ToString();
     }
 }
