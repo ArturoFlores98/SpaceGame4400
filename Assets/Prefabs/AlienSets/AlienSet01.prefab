@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2387046828196217628, guid: f74e9170af9089247a1a6ddf34b9fe8d, type: 3}
   mothershipPrefab: {fileID: 7465479040442005979, guid: af1a3165dd1b12f4e8c3121226c5fbb2, type: 3}
+  shootSFX: {fileID: 8300000, guid: 57cd7170f37f0534a8cc219305f9d21f, type: 3}
 --- !u!1001 &8814261217140291284
 PrefabInstance:
   m_ObjectHideFlags: 0

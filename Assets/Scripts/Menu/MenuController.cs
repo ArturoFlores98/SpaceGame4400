@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour
     public GameObject shopMenu;
     public GameObject inGameMenu;
     public GameObject pauseMenu;
+    public AudioClip menuSFX;
 
     public static MenuController instance;
 
@@ -29,6 +30,7 @@ public class MenuController : MonoBehaviour
     {
         instance.mainMenu.SetActive(true);
         instance.inGameMenu.SetActive(false);
+        AudioController.PlaySoundEffect(menuSFX);
     }
 
     public static void OpenGameOver()
@@ -41,12 +43,14 @@ public class MenuController : MonoBehaviour
     {
         instance.mainMenu.SetActive(false);
         instance.shopMenu.SetActive(true);
+        AudioController.PlaySoundEffect(menuSFX);
     }
 
     public void CloseShop()
     {
         instance.mainMenu.SetActive(true);
         instance.shopMenu.SetActive(false);
+        AudioController.PlaySoundEffect(menuSFX);
     }
 
     public void OpenInGame()
@@ -68,6 +72,7 @@ public class MenuController : MonoBehaviour
 
         instance.inGameMenu.SetActive(false);
         instance.pauseMenu.SetActive(true);
+        AudioController.PlaySoundEffect(menuSFX);
     }
 
     public void ClosePause()
@@ -76,6 +81,7 @@ public class MenuController : MonoBehaviour
 
         instance.inGameMenu.SetActive(true);
         instance.pauseMenu.SetActive(false);
+        AudioController.PlaySoundEffect(menuSFX);
     }
 
     public void ReturnToMainMenu()
@@ -88,12 +94,9 @@ public class MenuController : MonoBehaviour
         instance.inGameMenu.SetActive(false);
 
         instance.mainMenu.SetActive(true);
+        AudioController.PlaySoundEffect(menuSFX);
 
         GameController.CancelGame();
     }
 
-    public static void CloseWindow(GameObject go)
-    {
-        go.SetActive(false);
-    }
 }

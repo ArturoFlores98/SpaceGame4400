@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
     private GameObject currentSet;
     private Vector2 spawnPosition = new Vector2(0, 10);
     private static GameController instance;
+    public AudioClip waveComplete;
+    public AudioClip newWaveSFX;
 
     private void Awake()
     {
@@ -15,11 +17,6 @@ public class GameController : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-    }
-
-    private void Start()
-    {
-        SpawnNewWave();
     }
 
     public static void SpawnNewWave()
@@ -37,18 +34,24 @@ public class GameController : MonoBehaviour
             Destroy(instance.currentSet);
 
         UIController.ResetUI();
+        AudioController.StopBattleMusic();
     }
 
     private IEnumerator SpawnWave()
     {
+        AudioController.UpdateBattleMusicDelay(1);
+        AudioController.StopBattleMusic();
         AlienParent.allAliens.Clear();
 
         if (currentSet != null)
             Destroy(currentSet);
+        AudioController.PlaySoundEffect(waveComplete);
 
         yield return new WaitForSeconds(3);
 
+        AudioController.PlaySoundEffect(newWaveSFX);
         currentSet = Instantiate(allAlienSets[Random.Range(0, allAlienSets.Length)], spawnPosition, Quaternion.identity);
         UIController.UpdateWave();
+        AudioController.PlayBattleMusic();
     }
 }

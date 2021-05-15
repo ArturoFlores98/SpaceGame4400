@@ -5,6 +5,7 @@ using UnityEngine;
 public class Alien : MonoBehaviour
 {
     public int scoreValue;
+    public AudioClip dieSfx;
     public GameObject coinPF;
     public GameObject lifePF;
     //public GameObject healthPF;
@@ -30,6 +31,9 @@ public class Alien : MonoBehaviour
             Instantiate(coinPF, transform.position, Quaternion.identity);
 
         Instantiate(explosion, transform.position, Quaternion.identity);
+        AudioController.PlaySoundEffect(dieSfx);
+
+        AudioController.UpdateBattleMusicDelay(AlienParent.allAliens.Count);
 
         if(AlienParent.allAliens.Count == 0)
             GameController.SpawnNewWave();

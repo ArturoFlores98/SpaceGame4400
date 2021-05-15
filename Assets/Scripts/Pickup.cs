@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Pickup : MonoBehaviour
 {
     public float fallspeed;
+    public AudioClip pickUpSFX;
     void Update()
     {
         transform.Translate(Vector2.down * Time.deltaTime * fallspeed);
@@ -16,5 +17,6 @@ public abstract class Pickup : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
             PickMeUp();
+        AudioController.PlaySoundEffect(pickUpSFX);
     }
 }

@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 150
+  dieSfx: {fileID: 8300000, guid: 120412374a73c73449a597403a46a8d5, type: 3}
   coinPF: {fileID: 2669556723122301474, guid: 05a94a4397277db4eb9fdb665d82fcda, type: 3}
   lifePF: {fileID: 2188324363001050887, guid: 7fc7c263a5e9b6648bf366620df3a257, type: 3}
   explosion: {fileID: 8593296552003099156, guid: 8e513da645c7abe46909e9c173709741, type: 3}

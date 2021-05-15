@@ -5,6 +5,8 @@ using UnityEngine;
 public class Ship : MonoBehaviour
 {
     public ShipStats shipStats; 
+    public AudioClip shootSFX;
+    public AudioClip deathSFX;
     public GameObject shot;
     private Vector2 offScreenPosition = new Vector2(0,-20f);
     private Vector2 startScreenPosition = new Vector2(0, -6.1f);
@@ -43,11 +45,13 @@ public class Ship : MonoBehaviour
         if (shipStats.currentHealth <= 0)
         {
             shipStats.currentLives--;
+            AudioController.PlaySoundEffect(deathSFX);
             UIController.UpdateLives(shipStats.currentLives);
 
             if (shipStats.currentLives <= 0)
             {
-                Debug.Log("GameOver");
+                transform.position = offScreenPosition;
+                MenuController.OpenGameOver();
                 SaveController.SaveProgress();
             }
             else
@@ -86,11 +90,11 @@ public class Ship : MonoBehaviour
         }
 
     }
-    
     private IEnumerator Shoot()
     {
         shooting = true;
         Instantiate(shot, transform.position, Quaternion.identity);
+        AudioController.PlaySoundEffect(shootSFX);
         yield return new WaitForSeconds(shipStats.fireRate);
         shooting = false;
     }

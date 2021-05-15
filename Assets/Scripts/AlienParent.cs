@@ -26,6 +26,7 @@ public class AlienParent : MonoBehaviour
     private bool toRight;
     private bool entering = true;
     public static List<GameObject> allAliens = new List<GameObject>();
+    public AudioClip shootSFX;
         void Start()
     {
         foreach(GameObject go in GameObject.FindGameObjectsWithTag("Alien"))    
@@ -93,6 +94,7 @@ public class AlienParent : MonoBehaviour
         Vector2 pos = allAliens[Random.Range(0, allAliens.Count)].transform.position;
 
         Instantiate(bulletPrefab, pos, Quaternion.identity);
+        AudioController.PlaySoundEffect(shootSFX);
 
         shootTimer = shootTime;
     }
