@@ -100,7 +100,7 @@ public class Ship : MonoBehaviour
         transform.position = offScreenPosition;
         yield return new WaitForSeconds(2);
         shipStats.currentHealth = shipStats.maxHealth;
-        //UIController.UpdateHealthbar(shipStats.currentHealth);
+        //UIController.UpdateHealthbar(shipStats.currentHealth);\\
         transform.position = startScreenPosition;
 
     }
