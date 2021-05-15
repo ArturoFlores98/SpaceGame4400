@@ -48,13 +48,43 @@ public class Ship : MonoBehaviour
             if (shipStats.currentLives <= 0)
             {
                 Debug.Log("GameOver");
-                //GameOver
+                SaveController.SaveProgress();
             }
             else
             {
                 StartCoroutine(Respawn());
             }
         }
+    }
+
+    /*public void AddHealth()
+    {
+        if(shipStats.currentHealth == shipStats.maxHealth)
+        {
+            UIController.UpdateScore(250);
+        }
+        else
+        {
+            shipStats.currentHealth++;
+            UIController.UpdateHealthbar(shipStats.currentHealth);
+
+        }
+    }
+    */
+
+    public void AddLives()
+    {
+        if(shipStats.currentLives == shipStats.maxLives)
+        {
+            UIController.UpdateScore(1000);
+        }
+        else
+        {
+            shipStats.currentLives++;
+            UIController.UpdateLives(shipStats.currentLives);
+
+        }
+
     }
     
     private IEnumerator Shoot()
@@ -70,6 +100,7 @@ public class Ship : MonoBehaviour
         transform.position = offScreenPosition;
         yield return new WaitForSeconds(2);
         shipStats.currentHealth = shipStats.maxHealth;
+        //UIController.UpdateHealthbar(shipStats.currentHealth);\\
         transform.position = startScreenPosition;
 
     }

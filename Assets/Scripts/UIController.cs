@@ -20,7 +20,7 @@ public class UIController : MonoBehaviour
     public Image[] lifeSprites;
     public Image healthBar;
 
-    public SpriteSortPoint[] healthBars;
+    public Sprite[] healthBars;
 
     private Color32 active = new Color(1, 1, 1, 1);
     private Color32 inactive = new Color(1, 1, 1, 0.25f);
@@ -46,12 +46,10 @@ public class UIController : MonoBehaviour
         }
     }
 
-    /*
     public static void UpdateHealthbar(int h)
     {
         instance.healthBar.sprite = instance.healthBars[h];
     }
-    */
 
     public static void UpdateScore(int s)
     {
@@ -59,9 +57,27 @@ public class UIController : MonoBehaviour
         instance.scoreText.text = instance.score.ToString("000,000");
     }
 
-    public static void UpdateHighScore()
+    public static void ResetUI()
     {
-        //Todo
+        instance.score = 0;
+        instance.wave = 0;
+        instance.scoreText.text = instance.score.ToString("000,000");
+        instance.waveText.text = instance.wave.ToString();
+    }
+
+    public static void UpdateHighScore(int hs)
+    {
+        if(instance.highscore < hs)
+        {
+            instance.highscore = hs;
+            instance.highscoreText.text = instance.highscore.ToString("000,000");
+        }
+        
+    }
+
+    public static int GetHighScore()
+    {
+        return instance.highscore;
     }
 
     public static void UpdateWave()
@@ -72,6 +88,6 @@ public class UIController : MonoBehaviour
 
     public static void UpdateCoins()
     {
-        //Tod
+        instance.coinsText.text = Inventory.currentCoins.ToString();
     }
 }
