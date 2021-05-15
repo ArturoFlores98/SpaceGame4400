@@ -59,6 +59,14 @@ public class UIController : MonoBehaviour
         instance.scoreText.text = instance.score.ToString("000,000");
     }
 
+    public static void ResetUI()
+    {
+        instance.score = 0;
+        instance.wave = 0;
+        instance.scoreText.text = instance.score.ToString("000,000");
+        instance.waveText.text = instance.wave.ToString();
+    }
+
     public static void UpdateHighScore(int hs)
     {
         if(instance.highscore < hs)

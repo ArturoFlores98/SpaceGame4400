@@ -27,9 +27,23 @@ public class GameController : MonoBehaviour
         instance.StartCoroutine(instance.SpawnWave());
     }
 
+    public static void CancelGame()
+    {
+        instance.StopAllCoroutines();
+
+        AlienParent.allAliens.Clear();
+
+        if (instance.currentSet != null)
+            Destroy(instance.currentSet);
+
+        UIController.ResetUI();
+    }
+
     private IEnumerator SpawnWave()
     {
-        if(currentSet != null)
+        AlienParent.allAliens.Clear();
+
+        if (currentSet != null)
             Destroy(currentSet);
 
         yield return new WaitForSeconds(3);
