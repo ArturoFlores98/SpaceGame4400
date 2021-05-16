@@ -61,7 +61,7 @@ public class Ship : MonoBehaviour
         }
     }
 
-    /*public void AddHealth()
+    public void AddHealth()
     {
         if(shipStats.currentHealth == shipStats.maxHealth)
         {
@@ -70,11 +70,10 @@ public class Ship : MonoBehaviour
         else
         {
             shipStats.currentHealth++;
-            UIController.UpdateHealthbar(shipStats.currentHealth);
+            //UIController.UpdateHealthbar(shipStats.currentHealth);
 
         }
     }
-    */
 
     public void AddLives()
     {
@@ -104,7 +103,7 @@ public class Ship : MonoBehaviour
         transform.position = offScreenPosition;
         yield return new WaitForSeconds(2);
         shipStats.currentHealth = shipStats.maxHealth;
-        //UIController.UpdateHealthbar(shipStats.currentHealth);\\
+        //UIController.UpdateHealthbar(shipStats.currentHealth);
         transform.position = startScreenPosition;
 
     }

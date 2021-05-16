@@ -10,7 +10,8 @@ public static class SaveAndLoad
 
     private static string filename = "SaveData.txt";
     private static string directoryName = "SaveData";
-    public static void StateState(SaveObject so)
+
+    public static void SaveState(SaveObject so)
     {
         if(!DirectoryExists())
             Directory.CreateDirectory(Application.persistentDataPath + "/" + directoryName);
@@ -25,6 +26,7 @@ public static class SaveAndLoad
     public static SaveObject LoadState()
     {
         SaveObject so = new SaveObject();
+
         if (SaveExists())
         {
             try
@@ -39,6 +41,10 @@ public static class SaveAndLoad
                 Debug.LogWarning("failed to load save");
             }
 
+        }
+        else
+        {
+            SaveState(so);
         }
         return so;
     }

@@ -9,11 +9,12 @@ public class SaveObject
     {
         coins = 0;
         highscore = 0;
+
         shipStats = new ShipStats();
-        shipStats.maxHealth = 3;
+        shipStats.maxHealth = 1;
         shipStats.maxLives = 3;
         shipStats.shipSpeed = 3;
-        shipStats.fireRate = 0.5f;
+        shipStats.fireRate = 1f;
     }
 
 

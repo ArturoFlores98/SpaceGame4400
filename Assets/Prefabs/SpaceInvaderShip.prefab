@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6613598800651490720}
   - component: {fileID: 6613598800651490735}
+  - component: {fileID: 912854932}
+  - component: {fileID: 912854931}
   m_Layer: 0
   m_Name: SpaceInvaderShip
   m_TagString: Player
@@ -26,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6613598800651490734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.69, y: -2.74, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,3 +84,79 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &912854932
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6613598800651490734}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.77, y: 5.12}
+    newSize: {x: 4.77, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.98499995, y: -2.51}
+      - {x: 1.625, y: -2.24}
+      - {x: 1.7149999, y: -2.1499999}
+      - {x: 2.325, y: -1.88}
+      - {x: 2.385, y: -1.8299999}
+      - {x: 2.385, y: -0.29}
+      - {x: 2.335, y: -0.24}
+      - {x: 1.875, y: -0.11}
+      - {x: 1.345, y: -0.96}
+      - {x: 1.345, y: 0.41}
+      - {x: 1.265, y: 0.47}
+      - {x: 0.775, y: 0.55}
+      - {x: 0.645, y: -0.48}
+      - {x: 0.685, y: 1.5}
+      - {x: 0.33499998, y: 1.56}
+      - {x: 0.295, y: 2.53}
+      - {x: 0.255, y: 2.56}
+      - {x: -0.255, y: 2.56}
+      - {x: -0.705, y: 1.4499999}
+      - {x: -0.635, y: -0.59999996}
+      - {x: -0.705, y: 0.47}
+      - {x: -1.345, y: 0.53999996}
+      - {x: -1.395, y: -0.9}
+      - {x: -1.7249999, y: -0.96999997}
+      - {x: -1.775, y: -0.26999998}
+      - {x: -2.385, y: -0.13}
+      - {x: -2.385, y: -1.87}
+      - {x: -1.035, y: -2.56}
+      - {x: 0.98499995, y: -2.56}
+--- !u!114 &912854931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6613598800651490734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab7bfef42e08514e887eb1ae964c16f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipStats:
+    maxHealth: 5
+    currentHealth: 0
+    maxLives: 3
+    currentLives: 3
+    shipSpeed: 3
+    fireRate: 0.5
+  shootSFX: {fileID: 8300000, guid: 80753797af58ba7499c12554b752764d, type: 3}
+  deathSFX: {fileID: 8300000, guid: e0a4af15c96585c44b99d21bcf4e296a, type: 3}
+  shot: {fileID: 2483757101482820119, guid: 4e5fd378833047b4eb86a7d6458d311b, type: 3}

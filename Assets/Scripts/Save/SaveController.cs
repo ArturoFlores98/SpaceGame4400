@@ -27,6 +27,7 @@ public class SaveController : MonoBehaviour
         so.highscore = UIController.GetHighScore();
         so.shipStats = GameObject.FindGameObjectWithTag("Player").GetComponent<Ship>().shipStats;
 
+        SaveAndLoad.SaveState(so);
     }
 
     public static void LoadProgress()

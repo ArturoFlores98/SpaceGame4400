@@ -6,6 +6,7 @@ using UnityEngine;
 public class ShipStats
 {
     [Range(1,5)]
+    [HideInInspector]
     public int maxHealth;
     [HideInInspector]
     public int currentHealth;
@@ -13,7 +14,9 @@ public class ShipStats
     public int maxLives = 3;
     [HideInInspector]
     public int currentLives = 3;
+    [HideInInspector]
     public float shipSpeed;
+    [HideInInspector]
     public float fireRate;
 
 }

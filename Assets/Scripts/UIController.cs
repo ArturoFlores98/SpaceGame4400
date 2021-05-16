@@ -20,7 +20,7 @@ public class UIController : MonoBehaviour
     public Image[] lifeSprites;
     public Image healthBar;
 
-    public SpriteSortPoint[] healthBars;
+    public Sprite[] healthBars;
 
     private Color32 active = new Color(1, 1, 1, 1);
     private Color32 inactive = new Color(1, 1, 1, 0.25f);
@@ -46,12 +46,10 @@ public class UIController : MonoBehaviour
         }
     }
 
-    /*
-    public static void UpdateHealthbar(int h)
+    /*public static void UpdateHealthbar(int h)
     {
         instance.healthBar.sprite = instance.healthBars[h];
-    }
-    */
+    }*/
 
     public static void UpdateScore(int s)
     {

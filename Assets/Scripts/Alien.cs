@@ -8,7 +8,7 @@ public class Alien : MonoBehaviour
     public AudioClip dieSfx;
     public GameObject coinPF;
     public GameObject lifePF;
-    //public GameObject healthPF;
+    public GameObject healthPF;
     public GameObject explosion;
     private const int lifeChance = 2;
     private const int healthChance = 15;
@@ -25,8 +25,8 @@ public class Alien : MonoBehaviour
 
         if(random <= lifeChance)
             Instantiate(lifePF, transform.position, Quaternion.identity);
-        /*else if(random <= healthChance)
-            Instantiate(healthPF, transform.position, Quaternion.identity);*/
+        else if(random <= healthChance)
+            Instantiate(healthPF, transform.position, Quaternion.identity);
         else if(random <= coinChance)
             Instantiate(coinPF, transform.position, Quaternion.identity);
 

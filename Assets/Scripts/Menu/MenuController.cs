@@ -57,6 +57,13 @@ public class MenuController : MonoBehaviour
     {
         Time.timeScale = 1;
 
+        Ship player = GameObject.FindGameObjectWithTag("Player").GetComponent<Ship>();
+        player.shipStats.currentHealth = player.shipStats.maxHealth;
+        player.shipStats.currentLives = player.shipStats.maxLives;
+
+        //UIController.UpdateHealthbar(player.shipStats.currentHealth);
+        
+
         instance.mainMenu.SetActive(false);
         instance.pauseMenu.SetActive(false);
         instance.shopMenu.SetActive(false);
