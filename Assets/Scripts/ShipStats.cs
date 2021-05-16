@@ -17,6 +17,6 @@ public class ShipStats
     [HideInInspector]
     public float shipSpeed;
     [HideInInspector]
-    public float fireRate;
+    public float fireRate = 1;
 
 }

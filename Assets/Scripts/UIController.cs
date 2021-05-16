@@ -46,10 +46,10 @@ public class UIController : MonoBehaviour
         }
     }
 
-    /*public static void UpdateHealthbar(int h)
+    public static void UpdateHealthbar(int h)
     {
         instance.healthBar.sprite = instance.healthBars[h];
-    }*/
+    }
 
     public static void UpdateScore(int s)
     {
@@ -75,17 +75,17 @@ public class UIController : MonoBehaviour
         
     }
 
-    public static int GetHighScore()
-    {
-        return instance.highscore;
-    }
-
     public static void UpdateWave()
     {
         instance.wave++;
         instance.waveText.text = instance.wave.ToString();
     }
 
+     public static int GetHighScore()
+    {
+        return instance.highscore;
+    }
+   
     public static void UpdateCoins()
     {
         instance.coinsText.text = Inventory.currentCoins.ToString();

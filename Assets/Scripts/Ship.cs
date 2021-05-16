@@ -9,7 +9,7 @@ public class Ship : MonoBehaviour
     public AudioClip deathSFX;
     public GameObject shot;
     private Vector2 offScreenPosition = new Vector2(0,-20f);
-    private Vector2 startScreenPosition = new Vector2(0, -6.1f);
+    private Vector2 startScreenPosition = new Vector2(0, -5.3f);
     private const float left = -6.82f;
     private const float right = 6.82f;
     private bool shooting;
@@ -21,7 +21,7 @@ public class Ship : MonoBehaviour
 
         transform.position = startScreenPosition;
 
-        //UIController.UpdateHealthbar(shipStats.currentHealth);
+        UIController.UpdateHealthbar(shipStats.currentHealth);
         UIController.UpdateLives(shipStats.currentLives);
     }
     void Update()
@@ -40,7 +40,7 @@ public class Ship : MonoBehaviour
     private void TakeDamage()
     {
         shipStats.currentHealth--;
-        //UIController.UpdateHealthbar(shipStats.currentHealth);
+        UIController.UpdateHealthbar(shipStats.currentHealth);
 
         if (shipStats.currentHealth <= 0)
         {
@@ -103,7 +103,7 @@ public class Ship : MonoBehaviour
         transform.position = offScreenPosition;
         yield return new WaitForSeconds(2);
         shipStats.currentHealth = shipStats.maxHealth;
-        //UIController.UpdateHealthbar(shipStats.currentHealth);
+        UIController.UpdateHealthbar(shipStats.currentHealth);
         transform.position = startScreenPosition;
 
     }
